@@ -58,7 +58,7 @@ public class SecurityConfig {
 
         configuration.setAllowedOrigins(List.of(
             "http://localhost:5173",
-            "https://your-netlify-app.netlify.app"
+            "https://quizmasterwe.netlify.app/"
         ));
 
         configuration.setAllowedMethods(List.of(

@@ -1,13 +1,20 @@
-# Use official OpenJDK image
+# ---------- BUILD STAGE ----------
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+
+WORKDIR /app
+
+COPY . .
+
+RUN mvn clean package -DskipTests
+
+
+# ---------- RUNTIME STAGE ----------
 FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# Copy everything
-COPY . .
+COPY --from=build /app/target/quiz-backend-1.0.0.jar app.jar
 
-# Build the project
-RUN ./mvnw clean install || mvn clean install
+EXPOSE 8080
 
-# Run the jar
-CMD ["java", "-jar", "target/quiz-backend-1.0.0.jar"]
+CMD ["java", "-jar", "app.jar"]

@@ -1,6 +1,6 @@
 # 🧠 QuizMaster – Full Stack Quiz Platform
 
-QuizMaster is a production-ready full stack web application that allows students to attempt timed quizzes and admins to manage quiz content securely.
+QuizMaster is a production-ready java full stack web application that allows students to attempt timed quizzes and admins to manage quiz content securely.
 
 ---
 
